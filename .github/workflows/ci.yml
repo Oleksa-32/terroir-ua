@@ -9,6 +9,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+  env:
+    DB_NAME: ${{ secrets.DB_NAME }}
+    DB_PASSWORD: ${{ secrets.DB_PASSWORD }}
+    DB_USER: ${{ secrets.DB_USER }}
 
     steps:
       - uses: actions/checkout@v3
