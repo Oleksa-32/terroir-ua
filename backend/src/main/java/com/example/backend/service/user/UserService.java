@@ -14,4 +14,6 @@ public interface UserService {
     UserResponseDto getProfile(String email);
 
     UserResponseDto updateProfile(String email, UpdateUserProfileRequestDto dto);
+
+    UserResponseDto registerOrUpdateGoogleUser(String email, String name);
 }

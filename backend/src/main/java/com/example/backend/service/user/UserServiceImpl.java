@@ -12,6 +12,7 @@ import com.example.backend.repository.RoleRepository;
 import com.example.backend.repository.UserRepository;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Set;
+import java.util.UUID;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -72,5 +73,23 @@ public class UserServiceImpl implements UserService {
                 .orElseThrow(() -> new EntityNotFoundException("User not found: " + email));
         userMapper.updateProfileFromDto(requestDto, user);
         return userMapper.toDto(userRepository.save(user));
+    }
+
+    public UserResponseDto registerOrUpdateGoogleUser(String email, String name) {
+        return userRepository.findByEmail(email)
+                .map(existing -> {
+                    // optionally update name:
+                    existing.setName(name);
+                    return userMapper.toDto(userRepository.save(existing));
+                })
+                .orElseGet(() -> {
+                    // first-time: create with a random password
+                    var dto = new UserRegistrationRequestDto()
+                            .setEmail(email)
+                            .setName(name)
+                            .setPassword(UUID.randomUUID().toString())
+                            .setRepeatPassword(UUID.randomUUID().toString());
+                    return register(dto);
+                });
     }
 }
