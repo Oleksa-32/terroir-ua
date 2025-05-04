@@ -8,6 +8,10 @@
         <version>3.4.5</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <packaging>pom</packaging>
+    <modules>
+        <module>backend</module>
+    </modules>
     <groupId>com.example</groupId>
     <artifactId>terroir</artifactId>
     <version>0.0.1-SNAPSHOT</version>
