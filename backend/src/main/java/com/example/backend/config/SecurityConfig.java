@@ -49,19 +49,11 @@ public class SecurityConfig {
                         auth -> auth
                                 .requestMatchers(
                                         "/auth/**",
-                                        "/oauth2/**",
                                         "/swagger-ui/**",
                                         "/v3/api-docs/**")
                                 .permitAll()
                                 .anyRequest()
                                 .authenticated()
-                )
-                .oauth2Login(oauth2 -> oauth2
-                        .loginPage("/oauth2/authorization/google")
-                        .userInfoEndpoint(u -> u
-                                .userService(customOAuth2UserService)
-                        )
-                        .successHandler(successHandler)
                 )
                 .sessionManagement(session
                         -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
