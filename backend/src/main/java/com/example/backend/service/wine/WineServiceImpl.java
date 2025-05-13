@@ -3,6 +3,7 @@ package com.example.backend.service.wine;
 import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
+import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.mapper.WineMapper;
 import com.example.backend.model.Wine;
 import com.example.backend.repository.WineRepository;
@@ -43,6 +44,11 @@ public class WineServiceImpl implements WineService {
                 .orElseThrow(() -> new EntityNotFoundException("Wine with id " + id + "not found"));
         wineMapper.updateWineFromDto(updateWineRequestDto, existingWine);
         return wineMapper.toDto(wineRepository.save(existingWine));
+    }
+
+    @Override
+    public Page<WineItemDto> findItems(Pageable pageable) {
+        return wineRepository.findAll(pageable).map(wineMapper::toItem);
     }
 
     @Override

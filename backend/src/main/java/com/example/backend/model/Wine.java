@@ -37,18 +37,22 @@ public class Wine {
     @Column(nullable = false)
     private String description;
     @Column(nullable = false)
+    private String ownerDescription;
+    @Column(nullable = false)
     private BigDecimal rate;
-
+    @Column(nullable = false)
+    private String agingMethod;
+    @Column(nullable = false)
+    private int sweetness;
+    @Column(nullable = false)
+    private String region;
+    @Column(nullable = false)
+    private String variety;
+    @Column(nullable = false)
+    private int percentage;
+    @Column(nullable = false, name = "image_url")
+    private String imageUrl;
+    @Column(nullable = false)
     private boolean isDeleted = false;
-
-    public enum Types {
-        RED,
-        WHITE,
-        PINK,
-        SPARKLING,
-        DESSERT,
-        PORTWEIN,
-        ORANGE
-    }
 
 }

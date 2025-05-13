@@ -12,5 +12,12 @@ public class WineDto {
     private int price;
     private String producer;
     private String description;
+    private String ownerDescription;
     private BigDecimal rate;
+    private String agingMethod;
+    private int sweetness;
+    private String region;
+    private String variety;
+    private int percentage;
+    private String imageUrl;
 }

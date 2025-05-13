@@ -44,8 +44,43 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: owner_description
+                  type: text
+                  constraints:
+                    nullable: false
+              - column:
                   name: rate
                   type: decimal(9,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: aging_method
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: sweetness
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: region
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: variety
+                  type: varchar(255)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: percentage
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
+                  name: image_url
+                  type: varchar(255)
                   constraints:
                     nullable: false
               - column:

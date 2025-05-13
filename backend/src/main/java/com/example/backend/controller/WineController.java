@@ -3,6 +3,7 @@ package com.example.backend.controller;
 import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
+import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.service.wine.WineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -50,6 +51,11 @@ public class WineController {
             @PathVariable Long id,
             @RequestBody @Valid UpdateWineRequestDto updateWineRequestDto) {
         return wineService.updateWine(id, updateWineRequestDto);
+    }
+
+    @GetMapping("/items")
+    public Page<WineItemDto> findItems(Pageable pageable) {
+        return wineService.findItems(pageable);
     }
 
     @DeleteMapping("/{id}")
