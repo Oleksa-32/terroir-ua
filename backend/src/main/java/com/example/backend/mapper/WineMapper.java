@@ -5,6 +5,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.model.Types;
 import com.example.backend.model.Wine;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
@@ -20,4 +21,10 @@ public interface WineMapper {
     void updateWineFromDto(UpdateWineRequestDto requestDto, @MappingTarget Wine wine);
 
     WineItemDto toItem(Wine wine);
+
+    default Types map(String label) {
+        return label == null
+                ? null
+                : Types.fromLabel(label);
+    }
 }

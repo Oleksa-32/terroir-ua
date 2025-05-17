@@ -30,7 +30,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: price
-                  type: int
+                  type: decimal(19,2)
                   constraints:
                     nullable: false
               - column:
@@ -50,7 +50,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: rate
-                  type: decimal(9,2)
+                  type: decimal(5,2)
                   constraints:
                     nullable: false
               - column:
@@ -60,7 +60,7 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: sweetness
-                  type: int
+                  type: varchar(50)
                   constraints:
                     nullable: false
               - column:
@@ -75,7 +75,12 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: percentage
-                  type: int
+                  type: decimal(5,2)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: date_added
+                  type: datetime
                   constraints:
                     nullable: false
               - column:

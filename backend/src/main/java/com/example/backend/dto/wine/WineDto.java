@@ -1,6 +1,7 @@
 package com.example.backend.dto.wine;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import lombok.Data;
 
 @Data
@@ -9,15 +10,16 @@ public class WineDto {
     private String name;
     private int year;
     private String type;
-    private int price;
+    private BigDecimal price;
     private String producer;
     private String description;
     private String ownerDescription;
     private BigDecimal rate;
     private String agingMethod;
-    private int sweetness;
+    private String sweetness;
     private String region;
     private String variety;
-    private int percentage;
+    private BigDecimal percentage;
+    private LocalDateTime dateAdded;
     private String imageUrl;
 }

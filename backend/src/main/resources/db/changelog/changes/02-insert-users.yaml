@@ -19,7 +19,6 @@ databaseChangeLog:
                   name: name
                   value: "Jane"
 
-
         - insert:
             tableName: users
             columns:

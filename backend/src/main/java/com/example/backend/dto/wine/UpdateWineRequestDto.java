@@ -12,7 +12,7 @@ public class UpdateWineRequestDto {
     private int year;
     private String type;
     @Positive
-    private int price;
+    private BigDecimal price;
     @NotBlank
     private String producer;
     private String description;

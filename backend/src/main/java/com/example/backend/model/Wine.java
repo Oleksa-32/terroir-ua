@@ -9,6 +9,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
 import org.hibernate.annotations.SQLDelete;
@@ -31,7 +32,7 @@ public class Wine {
     @Enumerated(EnumType.STRING)
     private Types type;
     @Column(nullable = false)
-    private int price;
+    private BigDecimal price;
     @Column(nullable = false)
     private String producer;
     @Column(nullable = false)
@@ -43,16 +44,17 @@ public class Wine {
     @Column(nullable = false)
     private String agingMethod;
     @Column(nullable = false)
-    private int sweetness;
+    private String sweetness;
     @Column(nullable = false)
     private String region;
     @Column(nullable = false)
     private String variety;
     @Column(nullable = false)
-    private int percentage;
+    private BigDecimal percentage;
+    @Column(nullable = false)
+    private LocalDateTime dateAdded;
     @Column(nullable = false, name = "image_url")
     private String imageUrl;
     @Column(nullable = false)
     private boolean isDeleted = false;
-
 }
