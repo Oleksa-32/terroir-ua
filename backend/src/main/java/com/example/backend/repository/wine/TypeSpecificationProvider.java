@@ -3,16 +3,16 @@ package com.example.backend.repository.wine;
 import com.example.backend.model.Types;
 import com.example.backend.model.Wine;
 import com.example.backend.repository.SpecificationProvider;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Component;
-
 import java.util.Arrays;
 import java.util.Set;
 import java.util.stream.Collectors;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Component;
 
 @Component
 public class TypeSpecificationProvider implements SpecificationProvider<Wine> {
     private static final String TYPES_KEY = "type";
+
     @Override
     public String getKey() {
         return TYPES_KEY;

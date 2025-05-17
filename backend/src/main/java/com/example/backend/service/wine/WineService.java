@@ -5,10 +5,8 @@ import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
-import com.example.backend.model.Wine;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
 
 public interface WineService {
     WineDto save(CreateWineRequestDto requestDto);

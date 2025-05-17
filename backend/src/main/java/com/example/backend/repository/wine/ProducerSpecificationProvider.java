@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class ProducerSpecificationProvider implements SpecificationProvider<Wine> {
     private static final String PRODUCER_KEY = "producer";
+
     @Override
     public String getKey() {
         return PRODUCER_KEY;

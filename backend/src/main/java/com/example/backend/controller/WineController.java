@@ -68,7 +68,6 @@ public class WineController {
         return wineService.search(parametersDto, pageable);
     }
 
-
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MANAGER')")
     @ResponseStatus(HttpStatus.NO_CONTENT)

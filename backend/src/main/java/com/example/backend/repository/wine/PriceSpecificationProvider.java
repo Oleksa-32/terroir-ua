@@ -2,14 +2,14 @@ package com.example.backend.repository.wine;
 
 import com.example.backend.model.Wine;
 import com.example.backend.repository.SpecificationProvider;
+import java.math.BigDecimal;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Component;
-
-import java.math.BigDecimal;
 
 @Component
 public class PriceSpecificationProvider implements SpecificationProvider<Wine> {
     private static final String PRICE_KEY = "price";
+
     @Override
     public String getKey() {
         return PRICE_KEY;

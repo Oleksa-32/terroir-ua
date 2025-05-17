@@ -1,7 +1,7 @@
 package com.example.backend.dto.wine;
 
-import lombok.Data;
 import java.math.BigDecimal;
+import lombok.Data;
 
 @Data
 public class WineSearchParametersDto {

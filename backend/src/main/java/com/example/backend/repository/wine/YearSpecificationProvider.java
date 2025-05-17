@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class YearSpecificationProvider implements SpecificationProvider<Wine> {
     private static final String YEAR_KEY = "year";
+
     @Override
     public String getKey() {
         return YEAR_KEY;
