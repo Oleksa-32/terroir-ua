@@ -4,13 +4,16 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.mapper.WineMapper;
 import com.example.backend.model.Wine;
+import com.example.backend.repository.SpecificationBuilder;
 import com.example.backend.repository.WineRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -18,6 +21,7 @@ import org.springframework.stereotype.Service;
 public class WineServiceImpl implements WineService {
     private final WineRepository wineRepository;
     private final WineMapper wineMapper;
+    private final SpecificationBuilder<Wine> specificationBuilder;
 
     @Override
     public WineDto save(CreateWineRequestDto requestDto) {
@@ -49,6 +53,13 @@ public class WineServiceImpl implements WineService {
     @Override
     public Page<WineItemDto> findItems(Pageable pageable) {
         return wineRepository.findAll(pageable).map(wineMapper::toItem);
+    }
+
+    @Override
+    public Page<WineDto> search(WineSearchParametersDto searchParametersDto, Pageable pageable) {
+        Specification<Wine> specification = specificationBuilder.build(searchParametersDto);
+        return wineRepository.findAll(specification, pageable)
+                .map(wineMapper::toDto);
     }
 
     @Override

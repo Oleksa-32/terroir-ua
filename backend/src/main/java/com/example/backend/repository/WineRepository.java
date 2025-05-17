@@ -2,6 +2,7 @@ package com.example.backend.repository;
 
 import com.example.backend.model.Wine;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 
-public interface WineRepository extends JpaRepository<Wine, Long> {
+public interface WineRepository extends JpaRepository<Wine, Long>, JpaSpecificationExecutor<Wine> {
 }

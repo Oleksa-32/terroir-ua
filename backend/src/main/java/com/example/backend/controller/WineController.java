@@ -4,6 +4,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.service.wine.WineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -57,6 +58,16 @@ public class WineController {
     public Page<WineItemDto> findItems(Pageable pageable) {
         return wineService.findItems(pageable);
     }
+
+    @GetMapping("/search")
+    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    public Page<WineDto> search(
+            WineSearchParametersDto parametersDto,
+            Pageable pageable
+    ) {
+        return wineService.search(parametersDto, pageable);
+    }
+
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MANAGER')")
