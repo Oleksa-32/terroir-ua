@@ -7,6 +7,8 @@ import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.service.wine.WineService;
 import jakarta.validation.Valid;
+import java.io.IOException;
+import java.util.List;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -24,9 +26,6 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-
-import java.io.IOException;
-import java.util.List;
 
 @RestController
 @RequestMapping("/wines")
@@ -74,7 +73,7 @@ public class WineController {
     }
 
     @GetMapping("/search")
-//    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    //    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     public Page<WineDto> search(
             WineSearchParametersDto parametersDto,
             Pageable pageable

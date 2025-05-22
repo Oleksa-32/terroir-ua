@@ -10,16 +10,6 @@ import com.example.backend.model.Wine;
 import com.example.backend.repository.SpecificationBuilder;
 import com.example.backend.repository.WineRepository;
 import jakarta.persistence.EntityNotFoundException;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.jpa.domain.Specification;
-import org.springframework.stereotype.Service;
-import org.springframework.util.StringUtils;
-import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
@@ -30,10 +20,19 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
+import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
+import org.springframework.stereotype.Service;
+import org.springframework.util.StringUtils;
+import org.springframework.web.multipart.MultipartFile;
 
 @Service
 @RequiredArgsConstructor
-public class WineServiceImpl implements WineService{
+public class WineServiceImpl implements WineService {
     private static final int MAX_TOTAL = 30;
     private static final int MAX_PER_STAGE = 10;
     private final WineRepository wineRepository;
@@ -47,7 +46,9 @@ public class WineServiceImpl implements WineService{
 
     private void collectStage(WineSearchParametersDto dto, Wine base, List<Wine> acc) {
         int remaining = MAX_TOTAL - acc.size();
-        if (remaining <= 0) return;
+        if (remaining <= 0) {
+            return;
+        }
 
         int pageSize = Math.min(MAX_PER_STAGE, remaining);
         Page<Wine> page = wineRepository.findAll(
@@ -56,13 +57,19 @@ public class WineServiceImpl implements WineService{
         );
 
         for (Wine w : page.getContent()) {
-            if (w.getId().equals(base.getId())) continue;                     // skip the base wine
+            if (w.getId().equals(base.getId())) {
+                continue;
+            }
             boolean already = acc.stream()
                     .anyMatch(x -> x.getId().equals(w.getId()));
-            if (already) continue;
+            if (already) {
+                continue;
+            }
 
             acc.add(w);
-            if (acc.size() >= MAX_TOTAL) break;
+            if (acc.size() >= MAX_TOTAL) {
+                break;
+            }
         }
     }
 
@@ -88,14 +95,12 @@ public class WineServiceImpl implements WineService{
         WineSearchParametersDto dto = new WineSearchParametersDto();
         dto.setTypes(new String[]{ base.getType().getLabel() });
         dto.setProducers(new String[]{ base.getProducer() });
-        // leave years null so builder won’t add a year-range filter
         return dto;
     }
 
     private WineSearchParametersDto buildTypeOnlyDto(Wine base) {
         WineSearchParametersDto dto = new WineSearchParametersDto();
         dto.setTypes(new String[]{ base.getType().getLabel() });
-        // no producers, no years → filters only by type
         return dto;
     }
 
@@ -154,18 +159,17 @@ public class WineServiceImpl implements WineService{
     public List<WineItemDto> findRecommendations(Long id) {
         Wine base = wineRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Wine not found: " + id));
-
         List<Wine> picked = new ArrayList<>();
-
-        // apply each “relaxation” stage in order
         for (WineSearchParametersDto stageDto : List.of(
                 buildExactDto(base),
                 buildTypeProducerDto(base),
                 buildYearRangeDto(base),
                 buildTypeOnlyDto(base),
-                new WineSearchParametersDto()            // totally unfiltered
+                new WineSearchParametersDto()
         )) {
-            if (picked.size() >= MAX_TOTAL) break;
+            if (picked.size() >= MAX_TOTAL) {
+                break;
+            }
             collectStage(stageDto, base, picked);
         }
 

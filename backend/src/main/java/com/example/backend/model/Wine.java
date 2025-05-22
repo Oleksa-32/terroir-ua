@@ -53,10 +53,10 @@ public class Wine {
     private BigDecimal percentage;
     @Column(nullable = false)
     private LocalDateTime dateAdded;
-    @Column(name="image_url",
-            nullable=false,
-            insertable=false,
-            columnDefinition="varchar(255) default ''")
+    @Column(name = "image_url",
+            nullable = false,
+            insertable = false,
+            columnDefinition = "varchar(255) default ''")
     private String imageUrl;
     @Column(nullable = false)
     private boolean isDeleted = false;
