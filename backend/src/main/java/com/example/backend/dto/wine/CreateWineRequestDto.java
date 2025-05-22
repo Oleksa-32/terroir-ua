@@ -34,6 +34,4 @@ public class CreateWineRequestDto {
     private BigDecimal percentage;
     @NotNull
     private LocalDateTime dateAdded;
-    @NotBlank
-    private String imageUrl;
 }
