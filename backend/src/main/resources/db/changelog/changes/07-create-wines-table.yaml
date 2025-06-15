@@ -84,6 +84,11 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
+                  name: volume
+                  type: int
+                  constraints:
+                    nullable: false
+              - column:
                   name: image_url
                   type: varchar(255) default ''
                   constraints:

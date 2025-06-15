@@ -26,5 +26,7 @@ public interface WineService {
 
     List<WineItemDto> findRecommendations(Long id);
 
+    Page<WineDto> findRecent(Pageable pageable);
+
     void deleteWine(Long id);
 }

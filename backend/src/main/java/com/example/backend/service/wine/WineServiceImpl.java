@@ -16,6 +16,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -176,6 +177,14 @@ public class WineServiceImpl implements WineService {
         return picked.stream()
                 .map(wineMapper::toItem)
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public Page<WineDto> findRecent(Pageable pageable) {
+        LocalDateTime weekAgo = LocalDateTime.now().minusDays(7);
+        return wineRepository
+                .findAllByDateAddedAfter(weekAgo, pageable)
+                .map(wineMapper::toDto);
     }
 
     @Override

@@ -34,4 +34,6 @@ public class CreateWineRequestDto {
     private BigDecimal percentage;
     @NotNull
     private LocalDateTime dateAdded;
+    @Positive
+    private int volume;
 }

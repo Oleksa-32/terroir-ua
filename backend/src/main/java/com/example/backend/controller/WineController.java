@@ -34,7 +34,7 @@ public class WineController {
     private final WineService wineService;
 
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
-    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    @PreAuthorize("hasAnyRole('MANAGER')")
     @ResponseStatus(HttpStatus.CREATED)
     public WineDto save(
             @RequestPart("wine") @Valid CreateWineRequestDto requestDto,
@@ -44,7 +44,7 @@ public class WineController {
     }
 
     @GetMapping("/{id}")
-    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    //  @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     public WineDto getWineById(@PathVariable Long id) {
         return wineService.getWineById(id);
     }
@@ -79,6 +79,11 @@ public class WineController {
             Pageable pageable
     ) {
         return wineService.search(parametersDto, pageable);
+    }
+
+    @GetMapping("/recent")
+    public Page<WineDto> recent(Pageable pageable) {
+        return wineService.findRecent(pageable);
     }
 
     @DeleteMapping("/{id}")

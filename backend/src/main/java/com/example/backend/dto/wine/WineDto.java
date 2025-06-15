@@ -21,5 +21,6 @@ public class WineDto {
     private String variety;
     private BigDecimal percentage;
     private LocalDateTime dateAdded;
+    private int volume;
     private String imageUrl;
 }

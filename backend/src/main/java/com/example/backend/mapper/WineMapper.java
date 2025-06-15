@@ -10,6 +10,7 @@ import com.example.backend.model.Wine;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
+import org.mapstruct.Named;
 
 @Mapper(config = MapperConfig.class)
 public interface WineMapper {
@@ -26,5 +27,15 @@ public interface WineMapper {
         return label == null
                 ? null
                 : Types.fromLabel(label);
+    }
+
+    @Named("wineFromId")
+    default Wine wineFromId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        Wine w = new Wine();
+        w.setId(id);
+        return w;
     }
 }
