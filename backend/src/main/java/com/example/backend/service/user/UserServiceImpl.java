@@ -10,6 +10,7 @@ import com.example.backend.model.Role;
 import com.example.backend.model.User;
 import com.example.backend.repository.RoleRepository;
 import com.example.backend.repository.UserRepository;
+import com.example.backend.service.shoppingcart.ShoppingCartService;
 import jakarta.persistence.EntityNotFoundException;
 import java.util.Set;
 import java.util.UUID;
@@ -26,6 +27,7 @@ public class UserServiceImpl implements UserService {
     private final UserMapper userMapper;
     private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
+    private final ShoppingCartService shoppingCartService;
 
     @Override
     public UserResponseDto register(UserRegistrationRequestDto requestDto)
@@ -44,7 +46,7 @@ public class UserServiceImpl implements UserService {
         user.setRoles(Set.of(role));
 
         userRepository.save(user);
-
+        shoppingCartService.createShoppingCartForUser(user);
         return userMapper.toDto(user);
     }
 
