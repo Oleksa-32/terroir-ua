@@ -12,6 +12,7 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
@@ -21,6 +22,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Setter
 @SQLDelete(sql = "UPDATE wines SET is_deleted = 1 WHERE id = ?")
 @SQLRestriction("is_deleted = 0")
+@Accessors(chain = true)
 public class Wine {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

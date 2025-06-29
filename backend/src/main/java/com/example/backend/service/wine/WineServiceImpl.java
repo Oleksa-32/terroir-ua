@@ -17,14 +17,12 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
@@ -34,76 +32,13 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 @RequiredArgsConstructor
 public class WineServiceImpl implements WineService {
-    private static final int MAX_TOTAL = 30;
-    private static final int MAX_PER_STAGE = 10;
     private final WineRepository wineRepository;
     private final WineMapper wineMapper;
     private final SpecificationBuilder<Wine> specificationBuilder;
-
-    private final SpecificationBuilder<Wine> specBuilder;
+    private final WineRecommendationService recommendationService;
 
     @Value("${file.upload-dir}")
     private String uploadDir;
-
-    private void collectStage(WineSearchParametersDto dto, Wine base, List<Wine> acc) {
-        int remaining = MAX_TOTAL - acc.size();
-        if (remaining <= 0) {
-            return;
-        }
-
-        int pageSize = Math.min(MAX_PER_STAGE, remaining);
-        Page<Wine> page = wineRepository.findAll(
-                specBuilder.build(dto),
-                PageRequest.of(0, pageSize)
-        );
-
-        for (Wine w : page.getContent()) {
-            if (w.getId().equals(base.getId())) {
-                continue;
-            }
-            boolean already = acc.stream()
-                    .anyMatch(x -> x.getId().equals(w.getId()));
-            if (already) {
-                continue;
-            }
-
-            acc.add(w);
-            if (acc.size() >= MAX_TOTAL) {
-                break;
-            }
-        }
-    }
-
-    private WineSearchParametersDto buildExactDto(Wine base) {
-        WineSearchParametersDto dto = new WineSearchParametersDto();
-        dto.setTypes(new String[]{ base.getType().getLabel() });
-        dto.setProducers(new String[]{ base.getProducer() });
-        dto.setMinYear(base.getYear());
-        dto.setMaxYear(base.getYear());
-        return dto;
-    }
-
-    private WineSearchParametersDto buildYearRangeDto(Wine base) {
-        WineSearchParametersDto dto = new WineSearchParametersDto();
-        dto.setTypes(new String[]{ base.getType().getLabel() });
-        dto.setProducers(new String[]{ base.getProducer() });
-        dto.setMinYear(base.getYear() - 5);
-        dto.setMaxYear(base.getYear() + 5);
-        return dto;
-    }
-
-    private WineSearchParametersDto buildTypeProducerDto(Wine base) {
-        WineSearchParametersDto dto = new WineSearchParametersDto();
-        dto.setTypes(new String[]{ base.getType().getLabel() });
-        dto.setProducers(new String[]{ base.getProducer() });
-        return dto;
-    }
-
-    private WineSearchParametersDto buildTypeOnlyDto(Wine base) {
-        WineSearchParametersDto dto = new WineSearchParametersDto();
-        dto.setTypes(new String[]{ base.getType().getLabel() });
-        return dto;
-    }
 
     @Override
     public WineDto save(CreateWineRequestDto requestDto, MultipartFile image) throws IOException {
@@ -160,21 +95,8 @@ public class WineServiceImpl implements WineService {
     public List<WineItemDto> findRecommendations(Long id) {
         Wine base = wineRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Wine not found: " + id));
-        List<Wine> picked = new ArrayList<>();
-        for (WineSearchParametersDto stageDto : List.of(
-                buildExactDto(base),
-                buildTypeProducerDto(base),
-                buildYearRangeDto(base),
-                buildTypeOnlyDto(base),
-                new WineSearchParametersDto()
-        )) {
-            if (picked.size() >= MAX_TOTAL) {
-                break;
-            }
-            collectStage(stageDto, base, picked);
-        }
 
-        return picked.stream()
+        return recommendationService.recommend(base).stream()
                 .map(wineMapper::toItem)
                 .collect(Collectors.toList());
     }
