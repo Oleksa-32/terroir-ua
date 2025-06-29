@@ -11,6 +11,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import lombok.experimental.Accessors;
 import org.hibernate.annotations.SQLDelete;
 import org.hibernate.annotations.SQLRestriction;
 
@@ -20,6 +21,7 @@ import org.hibernate.annotations.SQLRestriction;
 @Setter
 @SQLDelete(sql = "UPDATE cart_items SET is_deleted = true WHERE id = ?")
 @SQLRestriction(value = "is_deleted = false")
+@Accessors(chain = true)
 public class CartItem {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,6 +35,6 @@ public class CartItem {
     private Wine wine;
     @Column(nullable = false)
     private int quantity;
-    @Column(nullable = false, columnDefinition = "tinyint(1)")
+    @Column(name = "is_deleted", nullable = false, columnDefinition = "tinyint(1)")
     private boolean isDeleted = false;
 }

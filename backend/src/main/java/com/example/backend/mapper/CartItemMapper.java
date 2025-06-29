@@ -1,9 +1,9 @@
 package com.example.backend.mapper;
 
 import com.example.backend.config.MapperConfig;
+import com.example.backend.dto.cartitem.CartItemDto;
 import com.example.backend.dto.cartitem.CreateCartItemDto;
 import com.example.backend.dto.cartitem.UpdateCartItemDto;
-import com.example.backend.dto.shoppingcart.CartItemDto;
 import com.example.backend.model.CartItem;
 import java.util.HashSet;
 import java.util.Set;

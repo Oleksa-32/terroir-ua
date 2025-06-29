@@ -41,6 +41,7 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String name;
 
+    @Column(name = "is_deleted")
     private boolean isDeleted = false;
 
     @ManyToMany

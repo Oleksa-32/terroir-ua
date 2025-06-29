@@ -30,15 +30,15 @@ public class ShoppingCart {
     private Long id;
     @Column(nullable = false)
     private BigDecimal amount;
-    @Column(nullable = false)
+    @Column(name = "delivery_price", nullable = false)
     private BigDecimal deliveryPrice;
-    @Column(nullable = false)
+    @Column(name = "total_price", nullable = false)
     private BigDecimal totalPrice;
     @MapsId
     @OneToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
-    @Column(nullable = false, columnDefinition = "tinyint(1)")
+    @Column(name = "is_deleted", nullable = false, columnDefinition = "tinyint(1)")
     private boolean isDeleted = false;
     @OneToMany(mappedBy = "shoppingCart", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<CartItem> cartItems = new HashSet<>();
