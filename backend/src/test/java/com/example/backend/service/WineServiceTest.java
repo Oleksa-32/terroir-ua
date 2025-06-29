@@ -13,7 +13,6 @@ import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.mapper.WineMapper;
 import com.example.backend.model.Types;
 import com.example.backend.model.Wine;
-import com.example.backend.repository.SpecificationBuilder;
 import com.example.backend.repository.WineRepository;
 import com.example.backend.service.wine.WineRecommendationService;
 import com.example.backend.service.wine.WineServiceImpl;
