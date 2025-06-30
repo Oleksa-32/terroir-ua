@@ -6,6 +6,7 @@ import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.service.wine.WineService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import java.io.IOException;
 import java.util.List;
@@ -36,6 +37,10 @@ public class WineController {
     @PostMapping(consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     @PreAuthorize("hasAnyRole('MANAGER')")
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(
+            summary = "Create a new wine",
+            description = "Create a new wine along with its image"
+    )
     public WineDto save(
             @RequestPart("wine") @Valid CreateWineRequestDto requestDto,
             @RequestPart("image") MultipartFile image
@@ -44,23 +49,38 @@ public class WineController {
     }
 
     @GetMapping("/{id}")
-    //  @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    @Operation(
+            summary = "Get wine by ID",
+            description = "Retrieve details of a specific wine by its ID"
+    )
     public WineDto getWineById(@PathVariable Long id) {
         return wineService.getWineById(id);
     }
 
     @GetMapping("/{id}/recommendations")
+    @Operation(
+            summary = "Get wine recommendations",
+            description = "Retrieve recommended wines related to the given wine ID"
+    )
     public List<WineItemDto> recommend(@PathVariable Long id) {
         return wineService.findRecommendations(id);
     }
 
     @GetMapping
+    @Operation(
+            summary = "List all wines",
+            description = "Retrieve a paginated list of all wines"
+    )
     public Page<WineDto> findAll(Pageable pageable) {
         return wineService.findAll(pageable);
     }
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('MANAGER')")
+    @Operation(
+            summary = "Update wine",
+            description = "Update the details of an existing wine by its ID"
+    )
     public WineDto updateWine(
             @PathVariable Long id,
             @RequestBody @Valid UpdateWineRequestDto updateWineRequestDto) {
@@ -68,12 +88,19 @@ public class WineController {
     }
 
     @GetMapping("/items")
+    @Operation(
+            summary = "List wine items",
+            description = "Retrieve a paginated list of wine items"
+    )
     public Page<WineItemDto> findItems(Pageable pageable) {
         return wineService.findItems(pageable);
     }
 
     @GetMapping("/search")
-    //    @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
+    @Operation(
+            summary = "Search wines",
+            description = "Search for wines using filter criteria and pagination"
+    )
     public Page<WineDto> search(
             WineSearchParametersDto parametersDto,
             Pageable pageable
@@ -82,6 +109,10 @@ public class WineController {
     }
 
     @GetMapping("/recent")
+    @Operation(
+            summary = "List recent wines",
+            description = "Retrieve a paginated list of the most recently added wines"
+    )
     public Page<WineDto> recent(Pageable pageable) {
         return wineService.findRecent(pageable);
     }
@@ -89,6 +120,10 @@ public class WineController {
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('MANAGER')")
     @ResponseStatus(HttpStatus.NO_CONTENT)
+    @Operation(
+            summary = "Delete wine",
+            description = "Delete a wine by its ID"
+    )
     public void deleteWine(@PathVariable Long id) {
         wineService.deleteWine(id);
     }

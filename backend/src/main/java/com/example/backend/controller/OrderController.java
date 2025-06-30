@@ -4,6 +4,7 @@ import com.example.backend.dto.order.CreateOrderDto;
 import com.example.backend.dto.order.OrderDto;
 import com.example.backend.dto.orderitem.OrderItemDto;
 import com.example.backend.service.order.OrderService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springdoc.core.annotations.ParameterObject;
@@ -28,18 +29,30 @@ public class OrderController {
     @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
+    @Operation(
+            summary = "Create order",
+            description = "Create a new order with given details"
+    )
     public OrderDto createOrder(@Valid @RequestBody CreateOrderDto orderDto) {
         return orderService.create(orderDto);
     }
 
     @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     @GetMapping
+    @Operation(
+            summary = "List orders",
+            description = "Retrieve a paginated list of orders for the current user"
+    )
     public Page<OrderDto> getMyOrders(@ParameterObject Pageable pageable) {
         return orderService.getOrders(pageable);
     }
 
     @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     @GetMapping("/{orderId}/items")
+    @Operation(
+            summary = "List order items",
+            description = "Retrieve a paginated list of items for a specific order"
+    )
     public Page<OrderItemDto> getOrderItems(@PathVariable Long orderId,
                                             @ParameterObject Pageable pageable) {
         return orderService.getOrderItems(orderId, pageable);
@@ -47,6 +60,10 @@ public class OrderController {
 
     @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
     @GetMapping("/{orderId}/items/{itemId}")
+    @Operation(
+            summary = "Get order item",
+            description = "Retrieve details of a specific item in an order by its ID"
+    )
     public OrderItemDto getOrderItem(@PathVariable Long orderId,
                                      @PathVariable Long itemId) {
         return orderService.getOrderItem(orderId, itemId);
