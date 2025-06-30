@@ -29,9 +29,10 @@ public class Wine {
     private Long id;
     @Column(nullable = false)
     private String name;
-    @Column(nullable = false)
+    @Column(name = "wine_year", nullable = false)
     private int year;
     @Enumerated(EnumType.STRING)
+    @Column(name = "wine_type")
     private Types type;
     @Column(nullable = false)
     private BigDecimal price;
@@ -39,11 +40,11 @@ public class Wine {
     private String producer;
     @Column(nullable = false)
     private String description;
-    @Column(nullable = false)
+    @Column(name = "owner_description", nullable = false)
     private String ownerDescription;
     @Column(nullable = false)
     private BigDecimal rate;
-    @Column(nullable = false)
+    @Column(name = "aging_method", nullable = false)
     private String agingMethod;
     @Column(nullable = false)
     private String sweetness;
@@ -53,7 +54,7 @@ public class Wine {
     private String variety;
     @Column(nullable = false)
     private BigDecimal percentage;
-    @Column(nullable = false)
+    @Column(name = "date_added", nullable = false)
     private LocalDateTime dateAdded;
     @Column(nullable = false)
     private int volume;
@@ -62,6 +63,6 @@ public class Wine {
             insertable = false,
             columnDefinition = "varchar(255) default ''")
     private String imageUrl;
-    @Column(nullable = false)
+    @Column(name = "is_deleted", nullable = false)
     private boolean isDeleted = false;
 }

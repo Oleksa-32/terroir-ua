@@ -19,12 +19,12 @@ databaseChangeLog:
                   constraints:
                     nullable: false
               - column:
-                  name: year
+                  name: wine_year
                   type: int
                   constraints:
                     nullable: false
               - column:
-                  name: type
+                  name: wine_type
                   type: varchar(255)
                   constraints:
                     nullable: false

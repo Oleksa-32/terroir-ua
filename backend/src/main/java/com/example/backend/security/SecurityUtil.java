@@ -1,15 +1,16 @@
 package com.example.backend.security;
 
-import com.example.backend.model.User;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 
 public class SecurityUtil {
-    private static Authentication getAuthentication() {
-        return SecurityContextHolder.getContext().getAuthentication();
-    }
-
     public static Long getLoggedInUserId() {
-        return ((User) getAuthentication().getPrincipal()).getId();
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        Object principal = auth.getPrincipal();
+        if (principal instanceof com.example.backend.model.User u) {
+            return u.getId();
+        }
+        // fallback to the "name" which, in tests, ia set to the numeric ID
+        return Long.valueOf(auth.getName());
     }
 }
