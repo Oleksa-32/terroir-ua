@@ -127,5 +127,4 @@ public class WineController {
     public void deleteWine(@PathVariable Long id) {
         wineService.deleteWine(id);
     }
-
 }

@@ -1,0 +1,2542 @@
+{
+	"info": {
+		"_postman_id": "cbdd976f-b01b-4aa6-bf29-e3b40c1dbf4b",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41652397",
+		"_collection_link": "https://n77777-5843.postman.co/workspace/terroir~77db0c84-b204-40d6-92b8-12699e557812/collection/41652397-cbdd976f-b01b-4aa6-bf29-e3b40c1dbf4b?action=share&source=collection_link&creator=41652397"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"jake4@example.com\",\r\n  \"password\": \"password\",\r\n  \"repeatPassword\": \"password\",\r\n  \"name\": \"Jakes2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/registration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"registration"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"jake4@example.com\",\r\n  \"password\": \"password\",\r\n  \"repeatPassword\": \"password\",\r\n  \"name\": \"Jakes2\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/registration",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"registration"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:01:19 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"email\": \"jake4@example.com\",\n    \"name\": \"Jakes2\"\n}"
+						}
+					]
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"john.smith@example.com\",\r\n  \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"email\": \"john.smith@example.com\",\r\n  \"password\": \"password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/auth/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:02:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"token\": \"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MTU5LCJleHAiOjE3NDc3NjcxNTl9.YHPvUOuE3G3GNjXYa-TJXZ6HvWQ2gWOJFXckbcKr3jHTQj06TUbfVtVs2MunYWgj\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "wine",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUwNjkzNzQ0LCJleHAiOjE3NTA2OTY3NDR9.zNsSpmIJZSzy5wunJLMcEeT_-Ok1u0c5XcO2BW-HbzLZ02wkEvvm0ehj-X2vidj7",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Château Margaux\",\n  \"year\": 2018,\n  \"type\": \"Червоне\",\n  \"price\": 149.99,\n  \"producer\": \"Château\",\n  \"description\": \"A legendary Bordeaux wine with rich aroma and complexity.\",\n  \"ownerDescription\": \"Personally selected for our premium collection.\",\n  \"rate\": 4.8,\n  \"agingMethod\": \"Oak barrels, 18 months\",\n  \"sweetness\": \"Dry\",\n  \"region\": \"Bordeaux, France\",\n  \"variety\": \"Cabernet Sauvignon\",\n  \"percentage\": 13.5,\n  \"dateAdded\": \"2025-06-20T10:00:00\",\n  \"volume\": 750\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "postman-cloud:///1f0504c1-8330-49e0-8889-a7a3201905e1"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wine",
+											"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/wines",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:05:57 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 8,\n    \"name\": \"Літній Вітерець\",\n    \"year\": 2023,\n    \"type\": \"WHITE\",\n    \"price\": 300,\n    \"producer\": \"Silvino Village\",\n    \"description\": \"Легкий, з нотками зеленого яблука.\",\n    \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n    \"rate\": 4.1,\n    \"agingMethod\": \"Нероздубнена ємність\",\n    \"sweetness\": \"Напівсухе\",\n    \"region\": \"Одещина\",\n    \"variety\": \"Riesling\",\n    \"percentage\": 11.5,\n    \"dateAdded\": \"2025-06-10T12:00:00\",\n    \"imageUrl\": \"/images/aec7b328-febc-4cce-8c0a-eddca6f2c694.png\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get all wines",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wine",
+											"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/wines",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:07:05 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"name\": \"Мерло Преміум\",\n            \"year\": 2024,\n            \"type\": \"RED\",\n            \"price\": 540,\n            \"producer\": \"Villa Tinta\",\n            \"description\": \"Насичений букет ягід та легка дубова нота.\",\n            \"ownerDescription\": \"Гладке, добре врівноважене.\",\n            \"rate\": 4.8,\n            \"agingMethod\": \"Французька дубова бочка\",\n            \"sweetness\": \"Сухе\",\n            \"region\": \"Закарпаття\",\n            \"variety\": \"Merlot\",\n            \"percentage\": 13,\n            \"dateAdded\": \"2025-05-20T14:30:00\",\n            \"imageUrl\": \"/images/39e92c53-3c9a-4bb1-b775-f9de69e2e34c.png\"\n        },\n        {\n            \"id\": 2,\n            \"name\": \"Совіньйон Бланкі\",\n            \"year\": 2023,\n            \"type\": \"WHITE\",\n            \"price\": 420.5,\n            \"producer\": \"Колоніст\",\n            \"description\": \"Свіжий аромат трав і цитрусів.\",\n            \"ownerDescription\": \"Легка кислотність, ідеально до морепродуктів.\",\n            \"rate\": 4.2,\n            \"agingMethod\": \"Нероздубнена ємність\",\n            \"sweetness\": \"Напівсухе\",\n            \"region\": \"Одеська область\",\n            \"variety\": \"Sauvignon Blanc\",\n            \"percentage\": 12.5,\n            \"dateAdded\": \"2025-04-10T09:15:00\",\n            \"imageUrl\": \"/images/70f1e481-7c1c-48f8-9eec-c0570e8b2c42.png\"\n        },\n        {\n            \"id\": 3,\n            \"name\": \"Ранкова Рожева\",\n            \"year\": 2022,\n            \"type\": \"PINK\",\n            \"price\": 360,\n            \"producer\": \"Shabo\",\n            \"description\": \"Делікатна полуниця з квітковими відтінками.\",\n            \"ownerDescription\": \"Легке і фруктове, чудове на пікніках.\",\n            \"rate\": 4.5,\n            \"agingMethod\": \"Нержавіюча сталь\",\n            \"sweetness\": \"Напівсолодке\",\n            \"region\": \"Херсонська область\",\n            \"variety\": \"Cabernet Sauvignon\",\n            \"percentage\": 11,\n            \"dateAdded\": \"2025-03-01T11:00:00\",\n            \"imageUrl\": \"/images/dea0264d-1ae0-4530-84dd-1c981a61e894.png\"\n        },\n        {\n            \"id\": 4,\n            \"name\": \"Ігриста Феєрія\",\n            \"year\": 2021,\n            \"type\": \"SPARKLING\",\n            \"price\": 780,\n            \"producer\": \"46 Parallel Wine Group\",\n            \"description\": \"Вишукані бульбашки та ніжний борошняний аромат.\",\n            \"ownerDescription\": \"Чудово для святкових тостів.\",\n            \"rate\": 4.9,\n            \"agingMethod\": \"Ремуаж та вторинна ферментація в пляшці\",\n            \"sweetness\": \"Сухе\",\n            \"region\": \"Винний регіон Закарпаття\",\n            \"variety\": \"Chardonnay\",\n            \"percentage\": 12,\n            \"dateAdded\": \"2025-02-14T18:00:00\",\n            \"imageUrl\": \"/images/c6ff6390-e22e-45f7-b748-f5a6478f2770.png\"\n        },\n        {\n            \"id\": 5,\n            \"name\": \"Солодка Насолода\",\n            \"year\": 2020,\n            \"type\": \"DESSERT\",\n            \"price\": 650.75,\n            \"producer\": \"Biologist\",\n            \"description\": \"Насичений медово-горіховий смак.\",\n            \"ownerDescription\": \"Ідеально до десертів та шоколаду.\",\n            \"rate\": 4.7,\n            \"agingMethod\": \"Барило з-під портвейну\",\n            \"sweetness\": \"Солодке\",\n            \"region\": \"Закарпаття\",\n            \"variety\": \"Muscat\",\n            \"percentage\": 16.5,\n            \"dateAdded\": \"2025-01-05T20:45:00\",\n            \"imageUrl\": \"/images/4d6f9f14-b28c-48f4-8103-5209c05f63b5.png\"\n        },\n        {\n            \"id\": 6,\n            \"name\": \"Традиційний Портвейн\",\n            \"year\": 2018,\n            \"type\": \"PORTWEIN\",\n            \"price\": 1200,\n            \"producer\": \"Don Alejandro Winery\",\n            \"description\": \"Глибокі фруктові та пряні нотки.\",\n            \"ownerDescription\": \"Міцний та багатогранний.\",\n            \"rate\": 4.6,\n            \"agingMethod\": \"Портвейнівська бочка\",\n            \"sweetness\": \"Солодке\",\n            \"region\": \"Північний регіон\",\n            \"variety\": \"Touriga Nacional\",\n            \"percentage\": 20,\n            \"dateAdded\": \"2024-12-01T16:10:00\",\n            \"imageUrl\": \"/images/6afe53d5-14d7-41da-a295-bc389c3c6399.png\"\n        },\n        {\n            \"id\": 7,\n            \"name\": \"Апельсиновий Анбру\",\n            \"year\": 2022,\n            \"type\": \"ORANGE\",\n            \"price\": 890,\n            \"producer\": \"Father’s Wine\",\n            \"description\": \"Таніни з дотиком апельсинової шкірки.\",\n            \"ownerDescription\": \"Складний та гармонійний.\",\n            \"rate\": 4.3,\n            \"agingMethod\": \"Контейнери з шкіркою\",\n            \"sweetness\": \"Сухе\",\n            \"region\": \"Закарпаття\",\n            \"variety\": \"Rkatsiteli\",\n            \"percentage\": 13.5,\n            \"dateAdded\": \"2025-05-01T13:20:00\",\n            \"imageUrl\": \"/images/0caddd58-8fa9-4bef-b58a-764a4cee1853.png\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Літній Вітерець\",\n            \"year\": 2023,\n            \"type\": \"WHITE\",\n            \"price\": 300,\n            \"producer\": \"Silvino Village\",\n            \"description\": \"Легкий, з нотками зеленого яблука.\",\n            \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n            \"rate\": 4.1,\n            \"agingMethod\": \"Нероздубнена ємність\",\n            \"sweetness\": \"Напівсухе\",\n            \"region\": \"Одещина\",\n            \"variety\": \"Riesling\",\n            \"percentage\": 11.5,\n            \"dateAdded\": \"2025-06-10T12:00:00\",\n            \"imageUrl\": \"/images/aec7b328-febc-4cce-8c0a-eddca6f2c694.png\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 8,\n    \"totalPages\": 1,\n    \"first\": true,\n    \"numberOfElements\": 8,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "get 1",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wine",
+											"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/wines/1",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines",
+										"1"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:07:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 1,\n    \"name\": \"Мерло Преміум\",\n    \"year\": 2024,\n    \"type\": \"RED\",\n    \"price\": 540,\n    \"producer\": \"Villa Tinta\",\n    \"description\": \"Насичений букет ягід та легка дубова нота.\",\n    \"ownerDescription\": \"Гладке, добре врівноважене.\",\n    \"rate\": 4.8,\n    \"agingMethod\": \"Французька дубова бочка\",\n    \"sweetness\": \"Сухе\",\n    \"region\": \"Закарпаття\",\n    \"variety\": \"Merlot\",\n    \"percentage\": 13,\n    \"dateAdded\": \"2025-05-20T14:30:00\",\n    \"imageUrl\": \"/images/39e92c53-3c9a-4bb1-b775-f9de69e2e34c.png\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get wines items",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines",
+								"items"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wine",
+											"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/wines/items",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines",
+										"items"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:09:12 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"name\": \"Мерло Преміум\",\n            \"year\": 2024,\n            \"price\": 540\n        },\n        {\n            \"name\": \"Совіньйон Бланкі\",\n            \"year\": 2023,\n            \"price\": 420.5\n        },\n        {\n            \"name\": \"Ранкова Рожева\",\n            \"year\": 2022,\n            \"price\": 360\n        },\n        {\n            \"name\": \"Ігриста Феєрія\",\n            \"year\": 2021,\n            \"price\": 780\n        },\n        {\n            \"name\": \"Солодка Насолода\",\n            \"year\": 2020,\n            \"price\": 650.75\n        },\n        {\n            \"name\": \"Традиційний Портвейн\",\n            \"year\": 2018,\n            \"price\": 1200\n        },\n        {\n            \"name\": \"Апельсиновий Анбру\",\n            \"year\": 2022,\n            \"price\": 890\n        },\n        {\n            \"name\": \"Літній Вітерець\",\n            \"year\": 2023,\n            \"price\": 300\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 8,\n    \"totalPages\": 1,\n    \"first\": true,\n    \"numberOfElements\": 8,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "get recomendations",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines/1/recommendations",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines",
+								"1",
+								"recommendations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "wine",
+									"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+									"contentType": "application/json",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/wines/search?name=Мерло%20Преміум&types=Червоне&minPrice=200&maxPrice=1500&minYear=2018&maxYear=2024&producers=Villa%20Tinta&producers=Shabo",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines",
+								"search"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "Мерло%20Преміум"
+								},
+								{
+									"key": "types",
+									"value": "Червоне"
+								},
+								{
+									"key": "minPrice",
+									"value": "200"
+								},
+								{
+									"key": "maxPrice",
+									"value": "1500"
+								},
+								{
+									"key": "minYear",
+									"value": "2018"
+								},
+								{
+									"key": "maxYear",
+									"value": "2024"
+								},
+								{
+									"key": "producers",
+									"value": "Villa%20Tinta"
+								},
+								{
+									"key": "producers",
+									"value": "Shabo"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "wine",
+											"value": "{\n  \"name\": \"Літній Вітерець\",\n  \"year\": 2023,\n  \"type\": \"Біле\",\n  \"price\": 300.00,\n  \"producer\": \"Silvino Village\",\n  \"description\": \"Легкий, з нотками зеленого яблука.\",\n  \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n  \"rate\": 4.1,\n  \"agingMethod\": \"Нероздубнена ємність\",\n  \"sweetness\": \"Напівсухе\",\n  \"region\": \"Одещина\",\n  \"variety\": \"Riesling\",\n  \"percentage\": 11.5,\n  \"dateAdded\": \"2025-06-10T12:00:00\"\n}",
+											"contentType": "application/json",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/user/Downloads/Team Project_Terroir UA (1)/Photo/Photo/5.png"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:8080/wines/search?name=Мерло%20Преміум&types=Червоне&minPrice=200&maxPrice=1500&minYear=2018&maxYear=2024&producers=Villa%20Tinta&producers=Shabo",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "Мерло%20Преміум"
+										},
+										{
+											"key": "types",
+											"value": "Червоне"
+										},
+										{
+											"key": "minPrice",
+											"value": "200"
+										},
+										{
+											"key": "maxPrice",
+											"value": "1500"
+										},
+										{
+											"key": "minYear",
+											"value": "2018"
+										},
+										{
+											"key": "maxYear",
+											"value": "2024"
+										},
+										{
+											"key": "producers",
+											"value": "Villa%20Tinta"
+										},
+										{
+											"key": "producers",
+											"value": "Shabo"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:17:41 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": 1,\n            \"name\": \"Мерло Преміум\",\n            \"year\": 2024,\n            \"type\": \"RED\",\n            \"price\": 540,\n            \"producer\": \"Villa Tinta\",\n            \"description\": \"Насичений букет ягід та легка дубова нота.\",\n            \"ownerDescription\": \"Гладке, добре врівноважене.\",\n            \"rate\": 4.8,\n            \"agingMethod\": \"Французька дубова бочка\",\n            \"sweetness\": \"Сухе\",\n            \"region\": \"Закарпаття\",\n            \"variety\": \"Merlot\",\n            \"percentage\": 13,\n            \"dateAdded\": \"2025-05-20T14:30:00\",\n            \"imageUrl\": \"/images/39e92c53-3c9a-4bb1-b775-f9de69e2e34c.png\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 1,\n    \"totalPages\": 1,\n    \"first\": true,\n    \"numberOfElements\": 1,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzQ3NzY0MzE0LCJleHAiOjE3NDc3NjczMTR9.f2w8YbUoRVgyPo8Fis_-2Hxe6lBrtWF8BVu50LG-d5q7oLJwwGAh0I5NJtmoiPgW",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/wines/search?&types=Біле",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"wines",
+								"search"
+							],
+							"query": [
+								{
+									"key": null,
+									"value": null
+								},
+								{
+									"key": "types",
+									"value": "Біле"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "search2",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/wines/search?&types=Біле",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"wines",
+										"search"
+									],
+									"query": [
+										{
+											"key": null,
+											"value": null
+										},
+										{
+											"key": "types",
+											"value": "Біле"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Tue, 20 May 2025 18:19:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"id\": 2,\n            \"name\": \"Совіньйон Бланкі\",\n            \"year\": 2023,\n            \"type\": \"WHITE\",\n            \"price\": 420.5,\n            \"producer\": \"Колоніст\",\n            \"description\": \"Свіжий аромат трав і цитрусів.\",\n            \"ownerDescription\": \"Легка кислотність, ідеально до морепродуктів.\",\n            \"rate\": 4.2,\n            \"agingMethod\": \"Нероздубнена ємність\",\n            \"sweetness\": \"Напівсухе\",\n            \"region\": \"Одеська область\",\n            \"variety\": \"Sauvignon Blanc\",\n            \"percentage\": 12.5,\n            \"dateAdded\": \"2025-04-10T09:15:00\",\n            \"imageUrl\": \"/images/70f1e481-7c1c-48f8-9eec-c0570e8b2c42.png\"\n        },\n        {\n            \"id\": 8,\n            \"name\": \"Літній Вітерець\",\n            \"year\": 2023,\n            \"type\": \"WHITE\",\n            \"price\": 300,\n            \"producer\": \"Silvino Village\",\n            \"description\": \"Легкий, з нотками зеленого яблука.\",\n            \"ownerDescription\": \"Відмінно охолоджене на пляжі.\",\n            \"rate\": 4.1,\n            \"agingMethod\": \"Нероздубнена ємність\",\n            \"sweetness\": \"Напівсухе\",\n            \"region\": \"Одещина\",\n            \"variety\": \"Riesling\",\n            \"percentage\": 11.5,\n            \"dateAdded\": \"2025-06-10T12:00:00\",\n            \"imageUrl\": \"/images/aec7b328-febc-4cce-8c0a-eddca6f2c694.png\"\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalElements\": 2,\n    \"totalPages\": 1,\n    \"first\": true,\n    \"numberOfElements\": 2,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"empty\": false\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "shoppping cart",
+			"item": [
+				{
+					"name": "add item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTA0MzA3OCwiZXhwIjoxNzUxMDQ2MDc4fQ.X5sLSsZFsrhSQ7nJ_xEwp3MZtO440jPneEiCfPjD5SLDKXiCMW8LfxqqvGAmbhCv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"wineId\": 1,\r\n    \"quantity\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"wineId\": 1,\r\n    \"quantity\": 1\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 16:52:39 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 3,\n    \"cartItems\": [\n        {\n            \"id\": 2,\n            \"wineId\": 1\n        }\n    ],\n    \"amount\": 149.99,\n    \"deliveryPrice\": 10,\n    \"totalPrice\": 159.99\n}"
+						}
+					]
+				},
+				{
+					"name": "get cart for user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTA0MzA3OCwiZXhwIjoxNzUxMDQ2MDc4fQ.X5sLSsZFsrhSQ7nJ_xEwp3MZtO440jPneEiCfPjD5SLDKXiCMW8LfxqqvGAmbhCv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 16:53:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 3,\n    \"cartItems\": [\n        {\n            \"id\": 2,\n            \"wineId\": 1\n        }\n    ],\n    \"amount\": 149.99,\n    \"deliveryPrice\": 10,\n    \"totalPrice\": 159.99\n}"
+						}
+					]
+				},
+				{
+					"name": "update cart item",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"quantity\": 2\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/cart/cart-items/2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"cart-items",
+										"2"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 16:56:22 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"userId\": 3,\n    \"cartItems\": [\n        {\n            \"id\": 3,\n            \"wineId\": 2\n        },\n        {\n            \"id\": 2,\n            \"wineId\": 1\n        }\n    ],\n    \"amount\": 749.95,\n    \"deliveryPrice\": 10,\n    \"totalPrice\": 759.95\n}"
+						}
+					]
+				},
+				{
+					"name": "get all carts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTA0MzA3OCwiZXhwIjoxNzUxMDQ2MDc4fQ.X5sLSsZFsrhSQ7nJ_xEwp3MZtO440jPneEiCfPjD5SLDKXiCMW8LfxqqvGAmbhCv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/all",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"all"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cart/all",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"all"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 16:57:18 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"content\": [\n        {\n            \"userId\": 3,\n            \"cartItems\": [\n                {\n                    \"id\": 3,\n                    \"wineId\": 2\n                },\n                {\n                    \"id\": 2,\n                    \"wineId\": 1\n                }\n            ],\n            \"amount\": 749.95,\n            \"deliveryPrice\": 10,\n            \"totalPrice\": 759.95\n        }\n    ],\n    \"pageable\": {\n        \"pageNumber\": 0,\n        \"pageSize\": 20,\n        \"sort\": {\n            \"empty\": true,\n            \"sorted\": false,\n            \"unsorted\": true\n        },\n        \"offset\": 0,\n        \"paged\": true,\n        \"unpaged\": false\n    },\n    \"last\": true,\n    \"totalPages\": 1,\n    \"totalElements\": 1,\n    \"size\": 20,\n    \"number\": 0,\n    \"sort\": {\n        \"empty\": true,\n        \"sorted\": false,\n        \"unsorted\": true\n    },\n    \"first\": true,\n    \"numberOfElements\": 1,\n    \"empty\": false\n}"
+						}
+					]
+				},
+				{
+					"name": "delete item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlOUBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTA0MzA3OCwiZXhwIjoxNzUxMDQ2MDc4fQ.X5sLSsZFsrhSQ7nJ_xEwp3MZtO440jPneEiCfPjD5SLDKXiCMW8LfxqqvGAmbhCv",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/cart/cart-items/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cart",
+								"cart-items",
+								"3"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/cart/cart-items/3",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"cart",
+										"cart-items",
+										"3"
+									]
+								}
+							},
+							"status": "No Content",
+							"code": 204,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 27 Jun 2025 16:58:49 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "/me",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUxMTE3MjU4LCJleHAiOjE3NTExMjAyNTh9.lT8i18nWxRjdywg4V_KZc09vuTsBHAN4Nh13GKOAJRyifkgIA2N_D2a7krOKZHK2",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/users/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 28 Jun 2025 13:27:59 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 2,\n    \"email\": \"john.smith@example.com\",\n    \"name\": \"John\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUxMjkzMTg5LCJleHAiOjE3NTEyOTYxODl9.yPNCnEPYtHHpPpinShn_ulB59mEOH9C2mdtK7wPDuRwbHboOkS77PYCB7tXUANwx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"role\": \"ROLE_MANAGER\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/4/role",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"4",
+								"role"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqb2huLnNtaXRoQGV4YW1wbGUuY29tIiwiaWF0IjoxNzUxMjkzMTg5LCJleHAiOjE3NTEyOTYxODl9.yPNCnEPYtHHpPpinShn_ulB59mEOH9C2mdtK7wPDuRwbHboOkS77PYCB7tXUANwx",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"John2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "order",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlNEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTI5MjI4MSwiZXhwIjoxNzUxMjk1MjgxfQ.ZmcnDDT9R4GaAMkfR2rcGu3na4hNI8J7zo9HcoGw_bJTZDQ0iobwmwYLUa_BNo9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"jake\",\r\n    \"lastName\": \"new\",\r\n    \"shippingAddress\": \"new11\",\r\n    \"zipCode\": 1,\r\n    \"phoneNumber\": \"new123\",\r\n    \"details\": \"new\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"firstName\": \"jake\",\r\n    \"lastName\": \"new\",\r\n    \"shippingAddress\": \"new11\",\r\n    \"zipCode\": 1,\r\n    \"phoneNumber\": \"new123\",\r\n    \"details\": \"new\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/orders",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"orders"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 14:08:01 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"id\": 3,\n    \"items\": null,\n    \"firstName\": \"jake\",\n    \"lastName\": \"new\",\n    \"shippingAddress\": \"new11\",\n    \"zipCode\": 1,\n    \"phoneNumber\": \"new123\",\n    \"details\": \"new\",\n    \"totalPrice\": 180.5\n}"
+						}
+					]
+				},
+				{
+					"name": "getMyOrders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlNEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTI5MjI4MSwiZXhwIjoxNzUxMjk1MjgxfQ.ZmcnDDT9R4GaAMkfR2rcGu3na4hNI8J7zo9HcoGw_bJTZDQ0iobwmwYLUa_BNo9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get order items",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "get item",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "payment",
+			"item": [
+				{
+					"name": "create",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"orderId\": 3\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8080/payments",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payments"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 14:12:15 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"sessionId\": \"cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T\",\n    \"sessionUrl\": \"https://checkout.stripe.com/c/pay/cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T#fidkdWxOYHwnPyd1blpxYHZxWjA0V0JKRFZGZDI2S0sxRExxNnJcQm1qQUdXTXRBa1Vtc2BdM3x9ZkhvUHdVUUlRXFx0S0RmZ3Q3Q0pNUmpXXWpkSGJyV2A0f0NwRF0xXDRWTnV0NzxhXVY8NTUxM2AwMzZWdScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl\"\n}"
+						}
+					]
+				},
+				{
+					"name": "success",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlNEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTI5MjI4MSwiZXhwIjoxNzUxMjk1MjgxfQ.ZmcnDDT9R4GaAMkfR2rcGu3na4hNI8J7zo9HcoGw_bJTZDQ0iobwmwYLUa_BNo9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payments/success?session_id=cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payments",
+								"success"
+							],
+							"query": [
+								{
+									"key": "session_id",
+									"value": "cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payments/success?session_id=cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payments",
+										"success"
+									],
+									"query": [
+										{
+											"key": "session_id",
+											"value": "cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "97"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 14:14:24 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Payment successful for session cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T"
+						}
+					]
+				},
+				{
+					"name": "search",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJqYWtlNEBleGFtcGxlLmNvbSIsImlhdCI6MTc1MTI5MjI4MSwiZXhwIjoxNzUxMjk1MjgxfQ.ZmcnDDT9R4GaAMkfR2rcGu3na4hNI8J7zo9HcoGw_bJTZDQ0iobwmwYLUa_BNo9i",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/payments?user_id=4",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"payments"
+							],
+							"query": [
+								{
+									"key": "user_id",
+									"value": "4"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payments?user_id=4",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payments"
+									],
+									"query": [
+										{
+											"key": "user_id",
+											"value": "4"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								},
+								{
+									"key": "Transfer-Encoding",
+									"value": "chunked"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 14:15:11 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "[\n    {\n        \"sessionId\": \"cs_test_a1fJQdWYenvo83UwmN432xfdNmRMC6MsYIiLHpJRzuakKVz9eryrXkiU0l\",\n        \"sessionUrl\": \"https://checkout.stripe.com/c/pay/cs_test_a1fJQdWYenvo83UwmN432xfdNmRMC6MsYIiLHpJRzuakKVz9eryrXkiU0l#fidkdWxOYHwnPyd1blpxYHZxWjA0V0JKRFZGZDI2S0sxRExxNnJcQm1qQUdXTXRBa1Vtc2BdM3x9ZkhvUHdVUUlRXFx0S0RmZ3Q3Q0pNUmpXXWpkSGJyV2A0f0NwRF0xXDRWTnV0NzxhXVY8NTUxM2AwMzZWdScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl\"\n    },\n    {\n        \"sessionId\": \"cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T\",\n        \"sessionUrl\": \"https://checkout.stripe.com/c/pay/cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T#fidkdWxOYHwnPyd1blpxYHZxWjA0V0JKRFZGZDI2S0sxRExxNnJcQm1qQUdXTXRBa1Vtc2BdM3x9ZkhvUHdVUUlRXFx0S0RmZ3Q3Q0pNUmpXXWpkSGJyV2A0f0NwRF0xXDRWTnV0NzxhXVY8NTUxM2AwMzZWdScpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl\"\n    }\n]"
+						}
+					]
+				},
+				{
+					"name": "cancel",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": [
+						{
+							"name": "New Request",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:8080/payments/cancel?session_id=cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8080",
+									"path": [
+										"payments",
+										"cancel"
+									],
+									"query": [
+										{
+											"key": "session_id",
+											"value": "cs_test_a1WLIwjIzEkOLRqP085DrJa4FK2arSSIHUQ0VsxkDLHADBjqL4msFf0S0T"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Vary",
+									"value": "Origin"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Method"
+								},
+								{
+									"key": "Vary",
+									"value": "Access-Control-Request-Headers"
+								},
+								{
+									"key": "X-Content-Type-Options",
+									"value": "nosniff"
+								},
+								{
+									"key": "X-XSS-Protection",
+									"value": "0"
+								},
+								{
+									"key": "Cache-Control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "Pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "Expires",
+									"value": "0"
+								},
+								{
+									"key": "X-Frame-Options",
+									"value": "DENY"
+								},
+								{
+									"key": "Content-Type",
+									"value": "text/plain;charset=UTF-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 30 Jun 2025 14:15:56 GMT"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=60"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								}
+							],
+							"cookie": [],
+							"body": "Payment cancelled; you have 24 hrs to retry using the same link."
+						}
+					]
+				}
+			]
+		}
+	]
+}
