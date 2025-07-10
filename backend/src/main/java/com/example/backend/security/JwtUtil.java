@@ -22,12 +22,14 @@ public class JwtUtil {
         this.secret = Keys.hmacShaKeyFor(secretString.getBytes(StandardCharsets.UTF_8));
     }
 
-    public String generateToken(String username) {
+    public String generateToken(String username, String role) {
+        long now = System.currentTimeMillis();
         return Jwts.builder()
-                .subject(username)
-                .issuedAt(new Date(System.currentTimeMillis()))
-                .expiration(new Date(System.currentTimeMillis() + expiration))
-                .signWith(this.secret)
+                .setSubject(username)
+                .claim("role", role)
+                .setIssuedAt(new Date(now))
+                .setExpiration(new Date(now + expiration))
+                .signWith(secret)
                 .compact();
     }
 

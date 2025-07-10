@@ -20,9 +20,12 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
             HttpServletRequest req,
             HttpServletResponse resp,
             Authentication auth) throws IOException {
-        String email = ((DefaultOAuth2User) auth.getPrincipal()).getAttribute("email");
-        String token = jwtUtil.generateToken(email);
+        DefaultOAuth2User oauthUser = (DefaultOAuth2User) auth.getPrincipal();
+        String email = oauthUser.getAttribute("email");
+        String role = "ROLE_CUSTOMER";
+        String token = jwtUtil.generateToken(email, role);
         resp.setContentType(MediaType.APPLICATION_JSON_VALUE);
-        resp.getWriter().write("{\"token\":\"" + token + "\"}");
+        resp.getWriter()
+                .write("{\"token\":\"" + token + "\",\"role\":\"" + role + "\"}");
     }
 }
