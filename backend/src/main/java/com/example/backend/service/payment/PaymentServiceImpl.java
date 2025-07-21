@@ -15,6 +15,7 @@ import jakarta.persistence.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.util.List;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -26,6 +27,9 @@ public class PaymentServiceImpl implements PaymentService {
     private final PaymentRepository paymentRepository;
     private final PaymentMapper paymentMapper;
     private final OrderRepository orderRepository;
+
+    @Value("${app.frontend.url}")
+    private String frontendBaseUrl;
 
     @Override
     public List<Payment> getPaymentsByUser(Long userId) {
@@ -45,11 +49,13 @@ public class PaymentServiceImpl implements PaymentService {
                 .multiply(BigDecimal.valueOf(100))
                 .longValueExact();
 
-        String successUrl = uriBuilder
+        String successUrl = UriComponentsBuilder
+                .fromHttpUrl(frontendBaseUrl)
                 .path("/payments/success")
                 .queryParam("session_id", "{CHECKOUT_SESSION_ID}")
                 .build().toUriString();
-        String cancelUrl = uriBuilder
+        String cancelUrl = UriComponentsBuilder
+                .fromHttpUrl(frontendBaseUrl)
                 .path("/payments/cancel")
                 .queryParam("session_id", "{CHECKOUT_SESSION_ID}")
                 .build().toUriString();
