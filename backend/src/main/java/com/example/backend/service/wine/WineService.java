@@ -18,7 +18,8 @@ public interface WineService {
 
     Page<WineDto> findAll(Pageable pageable);
 
-    WineDto updateWine(Long id, UpdateWineRequestDto updateWineRequestDto);
+    WineDto updateWine(Long id, UpdateWineRequestDto updateWineRequestDto, MultipartFile image)
+            throws IOException;
 
     Page<WineItemDto> findItems(Pageable pageable);
 

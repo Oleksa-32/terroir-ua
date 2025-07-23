@@ -72,11 +72,27 @@ public class WineServiceImpl implements WineService {
     }
 
     @Override
-    public WineDto updateWine(Long id, UpdateWineRequestDto updateWineRequestDto) {
-        Wine existingWine = wineRepository.findById(id)
-                .orElseThrow(() -> new EntityNotFoundException("Wine with id " + id + "not found"));
-        wineMapper.updateWineFromDto(updateWineRequestDto, existingWine);
-        return wineMapper.toDto(wineRepository.save(existingWine));
+    public WineDto updateWine(Long id,
+                              UpdateWineRequestDto dto,
+                              MultipartFile image) throws IOException {
+        Wine wine = wineRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Wine with id " + id
+                        + " not found"));
+
+        if (image != null && !image.isEmpty()) {
+            String ext = StringUtils.getFilenameExtension(image.getOriginalFilename());
+            String filename = UUID.randomUUID() + (ext != null ? "." + ext : "");
+            Path target = Paths.get(uploadDir).resolve(filename);
+            Files.createDirectories(target.getParent());
+            try (InputStream in = image.getInputStream()) {
+                Files.copy(in, target, StandardCopyOption.REPLACE_EXISTING);
+            }
+            wine.setImageUrl("/images/" + filename);
+        }
+        wineMapper.updateWineFromDto(dto, wine);
+
+        Wine updated = wineRepository.save(wine);
+        return wineMapper.toDto(updated);
     }
 
     @Override
