@@ -70,6 +70,8 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
         ShoppingCart shoppingCart = shoppingCartRepository.findByUserId(userId)
                 .orElseThrow(() -> new EntityNotFoundException("can't find cart with userid: "
                         + userId));
+        System.out.println("Wine id: ");
+        System.out.println(wine.getId());
 
         Long wineId = createCartItemDto.getWineId();
         Optional<CartItem> existingCartItem = cartItemRepository
@@ -117,6 +119,9 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
 
     @Override
     public void createShoppingCartForUser(User user) {
+        System.out.println("User cart start creating");
+        System.out.println(user);
+
         ShoppingCart shoppingCart = new ShoppingCart();
         shoppingCart.setAmount(new BigDecimal(0));
         shoppingCart.setDeliveryPrice(new BigDecimal(0));

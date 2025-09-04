@@ -35,6 +35,7 @@ public class ShoppingCartController {
     public ShoppingCartDto getCart() {
         Long userId = SecurityUtil.getLoggedInUserId();
         return cartService.findByUserId(userId);
+
     }
 
     @PreAuthorize("hasAnyRole('MANAGER', 'CUSTOMER')")
