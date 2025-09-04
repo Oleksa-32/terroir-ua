@@ -2,7 +2,7 @@ package com.example.backend.service.contact;
 
 import com.example.backend.dto.ContactForm;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
@@ -22,8 +22,8 @@ public class ContactServiceImpl implements ContactService {
         msg.setTo(appEmail);
         msg.setSubject("New contact‐form message");
         msg.setText(
-                "From: " + form.getEmail() + "\n\n" +
-                        "Message:\n" + form.getMessage()
+                "From: " + form.getEmail() + "\n\n"
+                        + "Message:\n" + form.getMessage()
         );
         mailSender.send(msg);
     }

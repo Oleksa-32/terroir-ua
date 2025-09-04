@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
 @Service
-public class CustomOAuth2UserService extends OidcUserService {  // <-- extends OidcUserService
+public class CustomOAuth2UserService extends OidcUserService {
 
     private final UserService userService;
 
@@ -28,7 +28,7 @@ public class CustomOAuth2UserService extends OidcUserService {  // <-- extends O
 
         String name = oidc.getFullName();
         if (name == null) {
-            String given  = oidc.getGivenName();
+            String given = oidc.getGivenName();
             String family = oidc.getFamilyName();
             name = ((given != null ? given : "") + " " + (family != null ? family : "")).trim();
         }
