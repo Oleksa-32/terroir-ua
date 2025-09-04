@@ -19,8 +19,4 @@ public interface ShoppingCartRepository extends JpaRepository<ShoppingCart, Long
     Optional<ShoppingCart> findByCartItemsId(Long shoppingCartItemId);
 
     Page<ShoppingCart> findByUser_Id(Long userId, Pageable pageable);
-
-    @Modifying
-    @Query("DELETE FROM CartItem c WHERE c.shoppingCart.id = :cartId")
-    void clearShoppingCart(Long cartId);
 }
