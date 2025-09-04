@@ -26,7 +26,7 @@ public class OAuth2SuccessHandler implements AuthenticationSuccessHandler {
         var principal = (OAuth2User) auth.getPrincipal();
 
         String email = principal.getAttribute("email");
-        String role  = "ROLE_CUSTOMER";
+        String role = "ROLE_CUSTOMER";
         System.out.println("email: " + email);
 
         String token = jwtUtil.generateToken(email, role);

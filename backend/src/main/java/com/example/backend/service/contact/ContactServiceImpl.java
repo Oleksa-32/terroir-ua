@@ -2,7 +2,6 @@ package com.example.backend.service.contact;
 
 import com.example.backend.dto.ContactForm;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
