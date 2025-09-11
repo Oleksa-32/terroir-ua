@@ -4,6 +4,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.mapper.WineMapper;
 import com.example.backend.model.Wine;
@@ -108,12 +109,12 @@ public class WineServiceImpl implements WineService {
     }
 
     @Override
-    public List<WineItemDto> findRecommendations(Long id) {
+    public List<WineRecommendationDto> findRecommendations(Long id) {
         Wine base = wineRepository.findById(id)
                 .orElseThrow(() -> new EntityNotFoundException("Wine not found: " + id));
 
         return recommendationService.recommend(base).stream()
-                .map(wineMapper::toItem)
+                .map(wineMapper::toRecommendation)
                 .collect(Collectors.toList());
     }
 

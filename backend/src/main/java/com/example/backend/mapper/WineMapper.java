@@ -5,6 +5,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.model.Types;
 import com.example.backend.model.Wine;
 import org.mapstruct.Mapper;
@@ -17,6 +18,10 @@ public interface WineMapper {
     WineDto toDto(Wine wine);
 
     Wine toModel(CreateWineRequestDto requestDto);
+
+    @Mapping(target = "id", source = "id")
+    @Mapping(target = "imageUrl", source = "imageUrl")
+    WineRecommendationDto toRecommendation(Wine wine);
 
     @Mapping(target = "id", ignore = true)
     void updateWineFromDto(UpdateWineRequestDto requestDto, @MappingTarget Wine wine);
