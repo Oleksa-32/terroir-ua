@@ -4,6 +4,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
 import java.io.IOException;
 import java.util.List;
@@ -25,7 +26,7 @@ public interface WineService {
 
     Page<WineDto> search(WineSearchParametersDto searchParametersDto, Pageable pageable);
 
-    List<WineItemDto> findRecommendations(Long id);
+    List<WineRecommendationDto> findRecommendations(Long id);
 
     Page<WineDto> findRecent(Pageable pageable);
 

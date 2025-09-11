@@ -12,6 +12,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.model.CartItem;
 import com.example.backend.model.Role;
 import com.example.backend.model.ShoppingCart;
@@ -76,6 +77,23 @@ public class TestDataUtil {
                 .setName("Wine " + id)
                 .setYear(2020)
                 .setPrice(BigDecimal.valueOf(20.99));
+    }
+
+    public static WineRecommendationDto createWineRecommendationDto(Long id) {
+        return (WineRecommendationDto) new WineRecommendationDto()
+                .setImageUrl("/images/wine" + id + ".jpg")
+                .setId(id)
+                .setName("Wine " + id)
+                .setYear(2020)
+                .setPrice(BigDecimal.valueOf(20.99));
+    }
+
+    public static List<WineRecommendationDto> createWineRecommendationDtoList() {
+        return List.of(
+                createWineRecommendationDto(1L),
+                createWineRecommendationDto(2L),
+                createWineRecommendationDto(3L)
+        );
     }
 
     public static CreateWineRequestDto createWineRequestDto() {

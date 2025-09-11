@@ -4,6 +4,7 @@ import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.UpdateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
 import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.dto.wine.WineSearchParametersDto;
 import com.example.backend.service.wine.WineService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -61,7 +62,7 @@ public class WineController {
             summary = "Get wine recommendations",
             description = "Retrieve recommended wines related to the given wine ID"
     )
-    public List<WineItemDto> recommend(@PathVariable Long id) {
+    public List<WineRecommendationDto> recommend(@PathVariable Long id) {
         return wineService.findRecommendations(id);
     }
 

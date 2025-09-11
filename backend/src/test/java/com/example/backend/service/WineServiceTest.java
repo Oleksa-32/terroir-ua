@@ -9,7 +9,7 @@ import static org.mockito.Mockito.when;
 
 import com.example.backend.dto.wine.CreateWineRequestDto;
 import com.example.backend.dto.wine.WineDto;
-import com.example.backend.dto.wine.WineItemDto;
+import com.example.backend.dto.wine.WineRecommendationDto;
 import com.example.backend.mapper.WineMapper;
 import com.example.backend.model.Types;
 import com.example.backend.model.Wine;
@@ -124,17 +124,22 @@ class WineServiceTest {
     @DisplayName("findRecommendations() returns recommended wines")
     void findRecommendations_ValidId_ReturnsRecommendations() {
         Wine baseWine = wineList.get(0);
-        List<Wine> recommendations = List.of(wineList.get(1), wineList.get(2));
-        List<WineItemDto> expectedDtos = TestDataUtil.createWineItemDtoList();
+        List<Wine> recommendations = List.of(wineList.get(1), wineList.get(2)); // ids 2,3
+
+        WineRecommendationDto dto2 = TestDataUtil.createWineRecommendationDto(2L);
+        WineRecommendationDto dto3 = TestDataUtil.createWineRecommendationDto(3L);
+        List<WineRecommendationDto> expected = List.of(dto2, dto3);
 
         when(wineRepository.findById(1L)).thenReturn(Optional.of(baseWine));
         when(recommendationService.recommend(baseWine)).thenReturn(recommendations);
-        when(wineMapper.toItem(recommendations.get(0))).thenReturn(expectedDtos.get(0));
-        when(wineMapper.toItem(recommendations.get(1))).thenReturn(expectedDtos.get(1));
 
-        List<WineItemDto> result = wineService.findRecommendations(1L);
+        when(wineMapper.toRecommendation(recommendations.get(0))).thenReturn(dto2);
+        when(wineMapper.toRecommendation(recommendations.get(1))).thenReturn(dto3);
+
+        List<WineRecommendationDto> result = wineService.findRecommendations(1L);
+
         assertThat(result).hasSize(2);
-        assertThat(result).isEqualTo(expectedDtos.subList(0, 2));
+        assertThat(result).usingRecursiveComparison().isEqualTo(expected);
     }
 
     @Test
